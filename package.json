@@ -1,0 +1,20 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "Cypress open",
+    "cypress:open": "cypress run"  
+  },
+  "keywords": [],
+  "author": "Israel Carrazco Flores",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^8.12.1",
+    "prettier": "^2.8.1"
+  },
+  "dependencies": {
+    "git": "^0.1.5"
+  }
+}

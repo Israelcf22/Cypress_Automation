@@ -26,10 +26,28 @@ describe('Home de www.frerangetesters.com', () => {
     //cy.get('#comp-l02x1m8d1label').should('have.value', '4') ejemplo para buscar por valor
    });
 
-   it('Encontrar un boton que se llame ', () => {
+   it('Encontrar un boton visible, en este caso el de Empezar a aprender  ', () => {
     cy.wait(4000)
     cy.get('#comp-krjarw4p > [data-testid="linkElement"] > .M3I7Z2').should('be.visible')
+    //cy.get('#comp-krjarw4p > [data-testid="linkElement"] > .M3I7Z2').should('exist') para validar que el elemento exista
+    //cy.get('#comp-krjarw4p > [data-testid="linkElement"] > .M3I7Z2').should('no. exist') para validar que el elemento NO exista
+    //cy.get('#comp-krjarw4p > [data-testid="linkElement"] > .M3I7Z2').should('not.be.visible') para buscar elementos no visibles
    });
+
+    it('Para revisar que un elemento está Checked', () => {
+    cy.get('').should('be.checked')   
+    });
+
+    it('Para revisar que un elemento está disable', () => {
+        cy.get('').should('be.disabled')   
+        });
+
+
+
+
+
+
+
     /*
     cy.xpath('//*[@id="comp-l02x1m8d2label"]').click() //se agrega programa para poder buscar por XPATH   npm install -D cypress-xpath
     cy.contains('Iniciar Sesión').click()  //busca por texto

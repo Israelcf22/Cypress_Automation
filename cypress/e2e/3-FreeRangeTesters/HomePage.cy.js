@@ -27,8 +27,9 @@ describe('Home de www.frerangetesters.com', () => {
    });
 
    it('Encontrar un boton visible, en este caso el de Empezar a aprender  ', () => {
-    cy.wait(4000)
-    cy.get('#comp-krjarw4p > [data-testid="linkElement"] > .M3I7Z2').should('be.visible')
+    //cy.wait(4000) EJEMPLO de wait 
+    cy.get('#comp-krjarw4p > [data-testid="linkElement"] > .M3I7Z2').as('BotonEmpezar') //para ponerle un alias
+    cy.get('BotonEmpezar').should('be.visible')
     //cy.get('#comp-krjarw4p > [data-testid="linkElement"] > .M3I7Z2').should('exist') para validar que el elemento exista
     //cy.get('#comp-krjarw4p > [data-testid="linkElement"] > .M3I7Z2').should('no. exist') para validar que el elemento NO exista
     //cy.get('#comp-krjarw4p > [data-testid="linkElement"] > .M3I7Z2').should('not.be.visible') para buscar elementos no visibles
@@ -36,13 +37,14 @@ describe('Home de www.frerangetesters.com', () => {
 
     it('Para revisar que un elemento está Checked', () => {
     cy.get('').should('be.checked')   
-    });
+    cy.get('').find("[type=checkbox]").should('be.checked')//usar el metodo FIND,suele ser una manera de trabajar mas eficiente, por ejemplo buscando elementos muy metidos dentrod el DOM
+   }); 
 
-    it('Para revisar que un elemento está disable', () => {
+   it('Para revisar que un elemento está disable', () => {
         cy.get('').should('be.disabled')   
-        });
+   });
 
-
+});
 
 
 
@@ -52,4 +54,4 @@ describe('Home de www.frerangetesters.com', () => {
     cy.xpath('//*[@id="comp-l02x1m8d2label"]').click() //se agrega programa para poder buscar por XPATH   npm install -D cypress-xpath
     cy.contains('Iniciar Sesión').click()  //busca por texto
     */
-   });
+  
